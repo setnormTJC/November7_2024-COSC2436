@@ -30,6 +30,8 @@ class LinkedList
 
 int main()
 {
+	//main(); //infinite recursion!
+
 	Node<string> headCar_inChooChooTrain; 
 	//Eric the Engineer is conducting the choo choo train ... 
 	headCar_inChooChooTrain.nodeContents = "Eric the Engineer";
@@ -53,19 +55,18 @@ int main()
 	//thirdCar.data //another name for node contents
 	thirdCar.nodeContents = "Darth and Eve and Frank";
 
-	secondCar.addressOfNextNode = &thirdCar;
+	secondCar.addressOfNextNode = &thirdCar; //now we have a linked list with 3 nodes
+
+	thirdCar.addressOfNextNode = nullptr; 
+
+	//Node<string>* fourthCar = new Node<string>; 
 
 	cout << headCar_inChooChooTrain.nodeContents << "\n";	
 	cout << secondCar.nodeContents << "\n";
 	cout << thirdCar.nodeContents << "\n";
 
+	//how to traverse this list in a less painstaking way? 
 
-
-
-	//delete thirdCar; 
-
-	//WHY? 
-	//int nums[5] = { 1, 2, 3, 4, 5 }; 
 
 }
 
