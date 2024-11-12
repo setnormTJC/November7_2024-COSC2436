@@ -24,6 +24,13 @@ public:
 		headNode = nullptr; 
 	}
 
+	SinglyLinkedList(string headNodeContents)
+	{
+		headNode = new Node; 
+		headNode->nodeContents = headNodeContents;
+		headNode->addressOfNextNode = nullptr; 
+	}
+
 	void push_back(string newItemToInsert)
 	{
 		Node* newNode = new Node; 
@@ -38,7 +45,7 @@ public:
 		Node* currentNode; 
 		currentNode = headNode; 
 
-		while (currentNode->addressOfNextNode != nullptr)
+		while (currentNode != nullptr)
 		{
 			cout << currentNode->nodeContents << "\n";
 			currentNode = currentNode->addressOfNextNode;
@@ -48,14 +55,15 @@ public:
 
 int main()
 {
-	double a = 132.333; 
-	a->link; 
+	//double a = 132.333; 
+	//a->link; //a "double" data type has no member variables (or functions)!
+	SinglyLinkedList ourTravelPath{ "'Murica!" };
 
-	SinglyLinkedList ourTravelPath;
+	//SinglyLinkedList ourTravelPath;
 	
 	ourTravelPath.push_back("Lahore, Pakistan");
 	ourTravelPath.push_back("Somewhere in India");
-	ourTravelPath.push_back("Nepal - Himalayas \n");
+	ourTravelPath.push_back("Nepal - Himalayas");
 	ourTravelPath.push_back("Tibet -- the ceiling of the World!"); 
 
 	ourTravelPath.traverse(); //print the node contents in order
